@@ -4,6 +4,7 @@ using AidCare_The_Last_Aid.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AidCare_The_Last_Aid.Migrations
 {
     [DbContext(typeof(AidCareContext))]
-    partial class AidCareContextModelSnapshot : ModelSnapshot
+    [Migration("20220615225212_work pls")]
+    partial class workpls
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,26 +114,6 @@ namespace AidCare_The_Last_Aid.Migrations
                     b.ToTable("donation");
                 });
 
-            modelBuilder.Entity("AidCare_The_Last_Aid.Models.donationtest", b =>
-                {
-                    b.Property<int>("donationtestId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("donationtestId"), 1L, 1);
-
-                    b.Property<int>("DonationAmount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("donationDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("donationtestId");
-
-                    b.ToTable("donationtest");
-                });
-
             modelBuilder.Entity("AidCare_The_Last_Aid.Models.Event", b =>
                 {
                     b.Property<int>("EventId")
@@ -154,30 +136,6 @@ namespace AidCare_The_Last_Aid.Migrations
                     b.HasKey("EventId");
 
                     b.ToTable("Event");
-                });
-
-            modelBuilder.Entity("AidCare_The_Last_Aid.Models.EventTest", b =>
-                {
-                    b.Property<int>("EventTestId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventTestId"), 1L, 1);
-
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EventLocation")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EventName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EventTestId");
-
-                    b.ToTable("EventTest");
                 });
 
             modelBuilder.Entity("AidCare_The_Last_Aid.Models.member", b =>

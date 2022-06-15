@@ -1,0 +1,30 @@
+﻿@model AidCare_The_Last_Aid.Models.donationtest
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>donationtest</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.donationDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.donationDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DonationAmount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DonationAmount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.donationtestId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -26,4 +26,10 @@ public class AidCareContext : IdentityDbContext<AidCareUser>
     public DbSet<AidCare_The_Last_Aid.Models.donation>? donation { get; set; }
 
     public DbSet<AidCare_The_Last_Aid.Models.Event>? Event { get; set; }
+
+    public DbSet<AidCare_The_Last_Aid.Models.membertest>? membertest { get; set; }
+
+    public DbSet<AidCare_The_Last_Aid.Models.donationtest>? donationtest { get; set; }
+
+    public DbSet<AidCare_The_Last_Aid.Models.EventTest>? EventTest { get; set; }
 }
